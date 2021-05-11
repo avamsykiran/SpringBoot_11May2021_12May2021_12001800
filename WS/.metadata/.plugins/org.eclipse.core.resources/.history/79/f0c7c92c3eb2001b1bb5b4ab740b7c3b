@@ -1,0 +1,5 @@
+package com.et.portal.controller;
+
+public class UserController {
+
+}

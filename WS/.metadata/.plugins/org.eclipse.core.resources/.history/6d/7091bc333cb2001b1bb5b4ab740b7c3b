@@ -1,0 +1,9 @@
+package com.et.portal.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.et.portal.entity.ETUserEntity;
+
+public interface UserRepository extends JpaRepository<ETUserEntity,Integer>{
+
+}

@@ -1,0 +1,5 @@
+package com.et.portal.model;
+
+public class ETUserModel {
+
+}

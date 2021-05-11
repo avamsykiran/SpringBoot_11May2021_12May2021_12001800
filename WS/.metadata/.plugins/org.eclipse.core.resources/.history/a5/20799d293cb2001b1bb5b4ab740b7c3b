@@ -1,0 +1,5 @@
+package com.et.portal.dao;
+
+public interface UserRepository {
+
+}

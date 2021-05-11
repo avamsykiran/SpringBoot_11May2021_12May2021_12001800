@@ -1,0 +1,16 @@
+package com.et.portal.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.et.portal.model.ETUserModel;
+
+@Controller
+public class UserController {
+
+	@GetMapping("/register")
+	public ModelAndView registerForm() {
+		return new ModelAndView("register", "user",new ETUserModel());
+	}
+}

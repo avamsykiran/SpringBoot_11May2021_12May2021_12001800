@@ -1,0 +1,33 @@
+package com.et.portal.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
+
+import com.et.portal.dao.UserRepository;
+import com.et.portal.model.ETUserModel;
+
+@Service
+@Scope("session")
+public class UserServiceImpl implements UserService{
+	
+	private ETUserModel currentUser;
+
+	@Autowired
+	private UserRepository repo;
+	
+	@Autowired
+	private EMParser parser;
+	
+	@Override
+	public ETUserModel register(ETUserModel user) {
+		return parser.parse(repo.save(parser.parse(user)));
+	}
+
+	@Override
+	public boolean login(String emailId, String password) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

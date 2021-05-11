@@ -72,3 +72,43 @@ Case Study - ExpensesTracker
             + @AutoConfiguaration
             + @PropertySource("classpath:application.properties")
 
+
+Spring Data
+----------------------------------
+
+             CrudRepository
+                JpaRespository
+
+
+            JpaRepository
+                        save            Entity              insert and update
+                        findById        Optional<Entity>    fetech entity given id
+                        findAll         List<Entity>        fetech all the entities from the db
+                        existsById      boolean             check if an entity exists given id
+                        count           long                number of entities in the db
+                        deleteById      void                delete the entity given id
+
+            Spring Data can implement method declared by the user, if
+            the method name follows Spring Data Specs...
+
+               Entity findByFieldName(Type fieldName)           Employee findByMobile(String mobile);
+
+               List<Entity> findAllByFieldName(Type fieldName)  List<Employee> findAllByFirstName(String firstName);
+
+               long countByFieldName(Type fieldName)            long countByFirstName(String firstName);
+
+               boolean existsByFieldName(Type fieldName)        boolean existsByFirstName(String firstName);
+
+            Spring data also can execute a customized query for a method if declared.....
+
+                @Query("jpql")
+                method declaration..;
+
+                @Query("SELECT e FROM Employee e WHERE e.salary between :lb and :ub")
+                List<Employee> getEmployeesHavingSalInRange(double lb,double ub);
+
+
+
+
+
+

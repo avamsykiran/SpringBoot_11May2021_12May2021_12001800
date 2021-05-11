@@ -8,4 +8,6 @@ import com.et.portal.entity.ETUserEntity;
 @Repository
 public interface UserRepository extends JpaRepository<ETUserEntity,Integer>{
 
+	boolean existsByEmailId(String emailId);
+	ETUserEntity findByEmailId(String emailId);
 }

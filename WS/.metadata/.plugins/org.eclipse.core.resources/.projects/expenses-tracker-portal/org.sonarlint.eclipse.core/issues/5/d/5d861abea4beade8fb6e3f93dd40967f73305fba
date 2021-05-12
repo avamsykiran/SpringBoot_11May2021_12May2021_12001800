@@ -1,0 +1,21 @@
+
+{
+java:S3973|"GUse indentation to denote the code conditionally executed by this "if".(Â¯ìûÿÿÿÿHçRCRITICALZ
+CODE_SMELL
+˜
+java:S2637!"g"tranType" is marked "javax.validation.constraints.NotNull" but is not initialized in this constructor.(¤åôåÿÿÿÿÿ8±çîş•/H‰RMINORZBUG
+
+java:S3776l"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(ÜÑãHëRCRITICALZ
+CODE_SMELL
+w
+java:S3973"GUse indentation to denote the code conditionally executed by this "if".(é•£‘HèRCRITICALZ
+CODE_SMELL
+v
+java:S3973w"GUse indentation to denote the code conditionally executed by this "if".(–×İôHæRCRITICALZ
+CODE_SMELL
+v
+java:S3973†"GUse indentation to denote the code conditionally executed by this "if".(ˆÙïnHéRCRITICALZ
+CODE_SMELL
+b
+java:S1135""2Complete the task associated to this TODO comment.(ƒŠ® úÿÿÿÿHêRINFOZ
+CODE_SMELL

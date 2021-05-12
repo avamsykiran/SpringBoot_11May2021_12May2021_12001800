@@ -1,4 +1,4 @@
 
-RWeb:PageWithoutTitleCheck"Add a <title> tag to this page.(Õ¶¯MH¤RMAJORZBUG
-i	Web:S5254"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷ÃûÿÿÿÿH£RMAJORZBUG
-rWeb:DoctypePresenceCheck":Insert a <!DOCTYPE> declaration to before this <html> tag.(œ÷ÃûÿÿÿÿH¢RMAJORZBUG
+RWeb:PageWithoutTitleCheck"Add a <title> tag to this page.(Õ¶¯MH®RMAJORZBUG
+rWeb:DoctypePresenceCheck":Insert a <!DOCTYPE> declaration to before this <html> tag.(œ÷ÃûÿÿÿÿH¯RMAJORZBUG
+i	Web:S5254"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷ÃûÿÿÿÿH­RMAJORZBUG

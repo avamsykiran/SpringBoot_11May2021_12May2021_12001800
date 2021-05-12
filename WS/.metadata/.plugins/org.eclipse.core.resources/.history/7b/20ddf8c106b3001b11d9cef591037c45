@@ -1,0 +1,92 @@
+package com.et.portal.controller;
+
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.et.portal.entity.TranType;
+import com.et.portal.model.ETUserModel;
+import com.et.portal.model.TranModel;
+import com.et.portal.service.UserService;
+
+@Controller
+@Scope("session")
+public class UserController {
+	
+	private ETUserModel currentUser;
+
+	@Autowired
+	private UserService service;
+	
+	@GetMapping("/register")
+	public ModelAndView registerForm() {
+		return new ModelAndView("register", "user",new ETUserModel());
+	}
+	
+	@PostMapping("/register")
+	public ModelAndView registerUser(@ModelAttribute("user") @Valid ETUserModel user,BindingResult validResult) {
+		
+		ModelAndView mv=null;
+		
+		if(validResult.hasErrors())
+			mv = new ModelAndView("register", "user",user);
+		else {
+			user = service.register(user);
+			mv = new ModelAndView("redirect:/home");
+		}
+		
+		return mv;
+	}
+	
+	@PostMapping("/login")
+	public ModelAndView login(@RequestParam("eid") String email,@RequestParam("pwd") String password) {
+		ModelAndView mv = null;
+		
+		currentUser = service.login(email, password);
+		if(currentUser!=null) {
+			mv = new ModelAndView("userDashboard","currentUser",currentUser);
+		}else {
+			mv = new ModelAndView("index","errMsg","Access Denied!");
+		}
+		
+		return mv;
+	}
+	
+	@RequestMapping("/userNav")
+	public String userNavBar() {
+		return "userNavBar";
+	}
+	
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		currentUser=null;
+		session.invalidate();
+		return "redirect:/home";
+	}
+	
+	@ModelAttribute
+	public TranType[] transTypes() {
+		return TranType.values();
+	}
+	
+	@GetMapping("/plusTran")
+	public ModelAndView newTransaction() {
+		return new ModelAndView("plusTranPage", "tran",new TranModel());
+	}
+	
+	@PostMapping("/plusTran")
+	public ModelAndView addTransaction(@ModelAttribute("tran") @Valid TranModel tran,BindingResult valiResult) {
+		ModelAndView mv =null;
+		return mv;
+	}
+}

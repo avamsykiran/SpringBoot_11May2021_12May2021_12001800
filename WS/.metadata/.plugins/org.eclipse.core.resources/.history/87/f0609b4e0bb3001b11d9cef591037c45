@@ -1,0 +1,9 @@
+package com.et.portal.service;
+
+import com.et.portal.model.TranModel;
+
+public interface TranService {
+
+	TranModel save(TranModel tran);
+	
+}

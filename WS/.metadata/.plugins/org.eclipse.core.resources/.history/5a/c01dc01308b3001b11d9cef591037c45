@@ -1,0 +1,24 @@
+package com.et.portal.service;
+
+import javax.swing.text.html.parser.Parser;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.et.portal.dao.TranRepository;
+import com.et.portal.model.TranModel;
+
+@Service
+public class TranServicImpl implements TranService {
+	@Autowired
+	private TranRepository repo;
+
+	@Autowired
+	private EMParser parser;
+
+	@Override
+	public TranModel save(TranModel tran) {
+		return parser.parse(repo.save(parser.parse(tran)));
+	}
+
+}

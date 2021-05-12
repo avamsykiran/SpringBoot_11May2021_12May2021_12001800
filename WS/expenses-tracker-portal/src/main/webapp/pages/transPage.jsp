@@ -1,0 +1,63 @@
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>
+	<body>
+	<jsp:include page="/userNav" />
+		<main class="container-fluid p-4">
+			<h3> Transactions </h3>
+			<table class="table table-border table-hover">
+				<thead>
+					<tr>
+						<th>TxnId</th>
+						<th>Particulars</th>
+						<th>Date And Time</th>
+						<th>Credit</th>
+						<th>Debit</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${trans }" var="t">
+						<tr>	
+							<td>${t.txnId }</td>
+							<td>${t.header }</td>
+							<td>${t.dateAndTime }</td>
+							<c:choose>
+								<c:when test="${t.tranType eq 'INCOME' }">
+									<td>${t.amount }</td>
+									<td></td>
+								</c:when>
+								<c:otherwise>
+									<td></td>
+									<td>${t.amount }</td>
+								</c:otherwise>
+							</c:choose>						
+						</tr>
+					</c:forEach>
+					<tfoot>
+						<tr>
+							<th colspan="3" class="text-left">
+								GROSS
+							</th>
+							<th>
+								${tranSummary.credit }
+							</th>
+							<th>
+								${tranSummary.debit }
+							</th>	
+						</tr>
+						<tr>
+							<th colspan="4" class="text-left">
+								Net Balance
+							</th>
+							<th>
+								${tranSummary.balance }
+							</th>
+						</tr>
+					</tfoot>
+				</tbody>
+			</table>
+		</main>
+	</body>
+</html>

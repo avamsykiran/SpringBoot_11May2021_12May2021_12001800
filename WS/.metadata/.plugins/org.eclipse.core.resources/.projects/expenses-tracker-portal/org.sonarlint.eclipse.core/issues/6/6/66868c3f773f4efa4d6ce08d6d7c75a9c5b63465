@@ -1,4 +1,7 @@
 
 
-java:S1128"IRemove this unused import 'org.springframework.context.annotation.Scope'.(şè®€ÿÿÿÿÿ8•·ğÙ•/HŸRMINORZ
+java:S1128"IRemove this unused import 'org.springframework.context.annotation.Scope'.(şè®€ÿÿÿÿÿ8•·ğÙ•/H¶RMINORZ
+CODE_SMELL
+¼
+java:S1186)"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×‰ÚÒúÿÿÿÿ8­çÈ€–/H¢RCRITICALZ
 CODE_SMELL

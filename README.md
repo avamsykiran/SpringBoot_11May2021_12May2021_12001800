@@ -66,6 +66,7 @@ Case Study - ExpensesTracker
             4. Record any incoem he got
             5. Record any spending he did
             6. Generate a balance sheet monthly.
+            7. logout
 
 @SpringBootApplication
             = @ComponentScan("thatPackageWhere theSpringBoot main class lies")

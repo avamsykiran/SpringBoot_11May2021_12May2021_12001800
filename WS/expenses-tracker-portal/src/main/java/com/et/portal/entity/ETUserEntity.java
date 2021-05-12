@@ -1,9 +1,12 @@
 package com.et.portal.entity;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +20,9 @@ public class ETUserEntity {
 	@Column(unique = true)
 	private String emailId;	
 	private String password;
+	
+	@OneToMany(mappedBy = "user")
+	private Set<TranEntity> transactions;
 	
 	public ETUserEntity() {}
 
@@ -58,6 +64,14 @@ public class ETUserEntity {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public Set<TranEntity> getTransactions() {
+		return transactions;
+	}
+
+	public void setTransactions(Set<TranEntity> transactions) {
+		this.transactions = transactions;
 	}
 
 	@Override

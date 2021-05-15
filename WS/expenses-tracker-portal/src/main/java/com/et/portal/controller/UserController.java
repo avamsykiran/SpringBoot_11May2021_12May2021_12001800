@@ -1,5 +1,6 @@
 package com.et.portal.controller;
 
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -81,9 +83,14 @@ public class UserController {
 		return "redirect:/home";
 	}
 	
-	@ModelAttribute
+	@ModelAttribute(name = "txnTypes")
 	public TranType[] txnTypes() {
 		return TranType.values();
+	}
+	
+	@ModelAttribute(name="dtFormat")
+	public DateTimeFormatter dtFormat() {
+		return DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm");
 	}
 	
 	@GetMapping("/plusTran")
@@ -113,4 +120,31 @@ public class UserController {
 		mv.addObject("tranSummary",tranSummary);
 		return mv;
 	}
+	
+	@GetMapping("/delete/{txnId}")
+	public ModelAndView deleteTransaction(@PathVariable("txnId")long txnId) {
+		tranService.delete(txnId);
+		return getTransactions();
+	}
+	
+	@GetMapping("/edit/{txnId}")
+	public ModelAndView editTransaction(@PathVariable("txnId")long txnId) {
+		TranModel tran = tranService.getById(txnId);
+		return new ModelAndView("editTranPage", "tran",tran);
+	}
+	
+	@PostMapping("/edit/{txnId}")
+	public ModelAndView doEditTransaction(@PathVariable("txnId")long txnId,@ModelAttribute("tran") @Valid TranModel tran,BindingResult valiResult) {
+		ModelAndView mv =null;
+		
+		if(valiResult.hasErrors())
+			mv = new ModelAndView("editTranPage", "tran",tran);
+		else {
+			tran.setUser(currentUser);
+			tranService.save(tran,txnId);
+			mv = getTransactions();
+		}
+		return mv;
+	}
+	
 }

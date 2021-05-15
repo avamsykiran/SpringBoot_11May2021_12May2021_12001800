@@ -1,11 +1,12 @@
 
+S
+java:S21292" Remove this "Double" constructor( ­¾É8Ë‡Ÿƒ–/HøRMAJORZ
+CODE_SMELL
 v
-java:S1128
-">Remove this unused import 'com.et.portal.entity.ETUserEntity'.(þ»Ðÿüÿÿÿÿ8±ØÜ€–/H¦RMINORZ
+java:S1128">Remove this unused import 'com.et.portal.entity.ETUserEntity'.(þ»Ðÿüÿÿÿÿ8±ØÜ€–/H÷RMINORZ
 CODE_SMELL
 S
-java:S2129)" Remove this "Double" constructor( ­¾É8‘ÿ”‚–/HÁRMAJORZ
+java:S2129<" Remove this "Double" constructor( ­¾É8‘ÿ”‚–/HöRMAJORZ
 CODE_SMELL
-S
-java:S21293" Remove this "Double" constructor( ­¾É8Ë‡Ÿƒ–/HÏRMAJORZ
+}	java:S112""FDefine and throw a dedicated exception instead of using a generic one.(…Âó¡ùÿÿÿÿ8¥ø…‰–/HŽRMAJORZ
 CODE_SMELL

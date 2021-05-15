@@ -37,8 +37,6 @@ b
 2src/main/java/com/et/portal/entity/TranEntity.java,d\6\d6b19e3f93a995385cf51f9e656d80cb35b00176
 V
 &src/main/webapp/pages/plusTranPage.jsp,3\6\369f0732e7e720094e578ce697829453c808ad9a
-h
-8src/main/java/com/et/portal/service/TranServicImple.java,f\5\f5ce2d13d9471f1dcdb5c557c17aa5489144cb7d
 `
 0src/main/java/com/et/portal/model/TranModel.java,5\d\5d861abea4beade8fb6e3f93dd40967f73305fba
 T
@@ -53,3 +51,5 @@ d
 4src/main/java/com/et/portal/service/TranService.java,b\5\b595d3231269586ad806f72cbd1da810c162ea52
 g
 7src/main/java/com/et/portal/service/TranServicImpl.java,e\7\e7634e636acce17adda6adbd7b63184c354f8880
+V
+&src/main/webapp/pages/editTranPage.jsp,c\a\ca7f5c9340676dd5f9773b7836c2f082c459ce3f

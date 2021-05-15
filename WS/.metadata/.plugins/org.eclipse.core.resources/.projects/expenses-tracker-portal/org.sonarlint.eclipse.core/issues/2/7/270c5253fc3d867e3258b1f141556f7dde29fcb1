@@ -1,6 +1,6 @@
 
-v
-java:S3752H">Add a "method" parameter to this "@RequestMapping" annotation.(›’¹p8ÿ´€ý•/HÁRCRITICALZVULNERABILITY
 p
-java:S18543"8Remove this useless assignment to local variable "user".(•«ˆóûÿÿÿÿ8¶™Š€–/HžRMAJORZ
+java:S18545"8Remove this useless assignment to local variable "user".(•«ˆóûÿÿÿÿ8¶™Š€–/HÓRMAJORZ
 CODE_SMELL
+v
+java:S3752J">Add a "method" parameter to this "@RequestMapping" annotation.(›’¹p8ÿ´€ý•/HÒRCRITICALZVULNERABILITY

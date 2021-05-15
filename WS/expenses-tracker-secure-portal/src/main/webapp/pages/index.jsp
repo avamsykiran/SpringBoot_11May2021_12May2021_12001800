@@ -18,6 +18,9 @@
 					</div>
 				</c:if>
 				<form class="form-inline" action="/login" method="POST">
+				
+					 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+				
 					<input type="email" name="eid" class="form-control" placeholder="emailId" required />
 					<input type="password" name="pwd" class="form-control" placeholder="password" required />
 					<button class="btn btn-sm btn-primary">Sign In</button>

@@ -40,7 +40,7 @@ public class SecurityConfiguaration extends WebSecurityConfigurerAdapter {
 
 		http.authorizeRequests().antMatchers("/users/**").authenticated();
 
-		http.csrf().disable();
+		//http.csrf().disable();
 		
 		http.formLogin()
 		.loginPage("/login")
@@ -48,7 +48,9 @@ public class SecurityConfiguaration extends WebSecurityConfigurerAdapter {
 		.defaultSuccessUrl("/users/dashboard")
 		.usernameParameter("eid").passwordParameter("pwd");
 
-		http.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/home");
+		http.logout()
+		.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+		.logoutSuccessUrl("/home");
 	}
 
 	@Override

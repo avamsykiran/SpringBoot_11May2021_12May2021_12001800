@@ -50,11 +50,4 @@ public class CommonsController {
 		
 		return mv;
 	}
-	
-	@PostMapping("/login")
-	public ModelAndView login(@RequestParam("eid") String email,@RequestParam("pwd") String password) {
-		ModelAndView mv = null;
-		
-		return mv;
-	}
 }

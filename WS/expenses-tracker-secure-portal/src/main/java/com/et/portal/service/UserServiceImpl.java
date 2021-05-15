@@ -42,7 +42,7 @@ public class UserServiceImpl implements UserService {
 
 		ETUserEntity appUser = repo.findByEmailId(emailId);
 
-		List<GrantedAuthority> grantList = new ArrayList<>();
+		List<GrantedAuthority> grantList = new ArrayList<>(); //list of roles..!
 
 		return new User(appUser.getEmailId(), appUser.getPassword(), grantList);
 	}

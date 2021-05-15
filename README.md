@@ -108,6 +108,57 @@ Spring Data
                 @Query("SELECT e FROM Employee e WHERE e.salary between :lb and :ub")
                 List<Employee> getEmployeesHavingSalInRange(double lb,double ub);
 
+Spring Security
+----------------------------------------------------------
+    
+    Foprm Based Authentication
+
+    Secruity Configuaration
+        
+        AuthenticationManager
+            a. UserDetailService interface to be used by authentication manger
+                to loadUserByUserName(String username),
+            b. Encryptor is used for excrypting and decrypting password
+
+        HttpSecurity
+                Enablked Form based Authentication
+            a. where do you have the login page.
+            b. what page msut appera if login fails
+            c. what page must appear if login is successful
+            d. what url should trigger logout
+            f. Which url mus tbe authenticated...!
+
+        WebSecurity
+            a. the set of urls of static resources to be ignored out of security.
+
+ Spring Security on REST API (using JWT)
+----------------------------------------------------------
+     
+        Token Based Authentiction....!
+
+    Secruity Configuaration
+        
+        AuthenticationManager
+            a. UserDetailService interface to be used by authentication manger
+                to loadUserByUserName(String username),
+            b. Encryptor is used for excrypting and decrypting password
+
+        HttpSecurity
+            a. Which url mus tbe authenticated...!
+            b. State less sesssion . and diable csrf
+            c. User Entry Filter
+                    is to check if an incoming jwt token is valid or not
+            d. User Entry point
+                    when login fails, this entrypoint will raise a
+                    401 status.
+
+        Authentication Filter
+        Authentication Entry Point
+        Model to ship the jwt token
+        we need to ahndle the post reqruest ot login url,which shall generate the jwt token.
+
+
+
 
 
 
